@@ -14,7 +14,7 @@ try:
 except ModuleNotFoundError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "pyzmq"])
 
-
+# Converting objects to dictionary (weird, but works?)
 class SearchResultEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, SearchResult):
